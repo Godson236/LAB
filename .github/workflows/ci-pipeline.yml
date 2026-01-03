@@ -1,1 +1,16 @@
-
+name: CI Pipeline
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup environment
+        run: echo "Initialisation..."
+      - name: Build
+        run: echo "Building..."
+      - name: Run tests
+        run: echo "Running tests..."
+      - name: Package
+        run: echo "Packaging..."
