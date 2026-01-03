@@ -1,37 +1,44 @@
 name: CI Pipeline
-on: [push]
+on:
+  push:
+    branches: [LAB]
+  pull_request:
+    branches: [LAB]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       # 1. Configuration initiale du job
       - name: Set up job
-        run: echo "Démarrage du job CI/CD"
+        run: echo "Démarrage du job CI/CD pour la branche LAB"
       
       # 2. Initialisation de l'environnement
       - name: Initialisation
-        run: echo "Initialisation de l'environnement..."
+        run: echo "Initialisation de l'environnement LAB..."
       
       # 3. Récupération du code source
       - name: Récupération du code
         uses: actions/checkout@v4
+        with:
+          ref: LAB  # Spécifie explicitement la branche LAB
       
       # 4. Étape de build/compilation
       - name: Build
-        run: echo "Building the application..."
+        run: echo "Building the application pour LAB..."
       
       # 5. Exécution des tests
       - name: Run tests
-        run: echo "Running tests..."
+        run: echo "Running tests pour LAB..."
       
       # 6. Packaging de l'application
       - name: Packaging
-        run: echo "Packaging the application..."
+        run: echo "Packaging the application pour LAB..."
       
       # 7. Fin du pipeline
       - name: Fin du pipeline
-        run: echo "Pipeline terminé avec succès"
+        run: echo "Pipeline LAB terminé avec succès"
       
       # 8. Nettoyage et fin du job
       - name: Complete job
-        run: echo "Job terminé - Nettoyage des ressources"
+        run: echo "Job LAB terminé - Nettoyage des ressources"
