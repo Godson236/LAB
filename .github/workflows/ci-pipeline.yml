@@ -1,8 +1,6 @@
 name: CI Pipeline
 on:
-    branches
-    -LAB
-    branches
+   push:
     -LAB
 
 jobs:
